@@ -1,4 +1,5 @@
 .wrapper{
+<<<<<<< HEAD
     display: flex;
     gap:30%;
     background-color: rgba(255, 255, 255, 1);
@@ -36,6 +37,35 @@
             &:hover{
                 color: rgba(94, 150, 252, 1);
                 font-weight: 500;
+=======
+    background: #fff;
+    & .content{
+        width: 1440px;
+        display: flex;
+        gap: 560px;
+        align-items: center;
+        padding: 24px 0px 24px 162px;
+        & .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            & h2{
+                font: 600 24px Poppins;
+                line-height: 100%;
+                letter-spacing: -2%;
+            }
+        }
+        & .links{
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            justify-self: center;
+            font: 500 16px Inter;
+            line-height: 20px;
+            vertical-align: middle;
+            & p:first-of-type{
+                color: #5E96FC;
+>>>>>>> 844753582d0f5c9984448a39a81ec3024f37aa0b
             }
         }
     }
