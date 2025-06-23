@@ -1,18 +1,26 @@
 import Item from './Components/Item'
 import style from './style.module.scss'
+import vacancies from '../Array'
+import { useState } from 'react';
+import Header from '../../Components/Header/Header';
 function MainPage(){
-    const arr =[
-        {title: 'Менеджер-дизайнер', salary: 'з/п от 70000 rub', schedule: 'Полный рабочий день', place: 'Новый Уренгой'},
-        {title: 'Ведущий графический дизайнер НЕ УДАЛЕННО', salary: 'з/п от 80000 rub', schedule: 'Полный рабочий день', place: 'Москва'},
-        {title: 'Работник декорации, дизайнер (ТЦ Амбар)', salary: 'з/п 29000 rub', schedule: 'Сменный график работы', place: 'Самара'},
-        {title: 'Менеджер-дизайнер', salary: 'з/п 55000 - 95000 rub', schedule: 'Полный рабочий день', place: 'Тюмень'}
-    ]
+
+    const [text, setText] = useState('');
+    const [arr, setArr] = useState(vacancies)
+    function change(e){
+        setText(e.target.value.toLowerCase())
+    }
+    function search(){
+        setArr(vacancies.filter(el => el.title.toLowerCase().includes(text)))
+    }
     return (
+        <>
+        <Header/>
         <div className={style.main}>
             <div className={style.wrapper}>
                 <div className={style.search}>
-                    <input type="text" placeholder='Введите название вакансии' />
-                    <button>Поиск</button>
+                    <input type="text" placeholder='Введите название вакансии' onChange={change}/>
+                    <button onClick={search}>Поиск</button>
                 </div>
                 <div className={style.vacancies}>
                     {arr.map((el) => <Item el = {el}/>)}
@@ -26,6 +34,7 @@ function MainPage(){
                 </div>
             </div>
         </div>
+        </>
     )
 }
 export default MainPage

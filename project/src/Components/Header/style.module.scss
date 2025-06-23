@@ -1,0 +1,42 @@
+.wrapper{
+    display: flex;
+    gap:30%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 24px 162px;
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        p{
+            font:600 24px Poppins;
+            color:rgba(35, 33, 52, 1);
+        }
+    }
+    .links{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap:60px;
+        .search{
+            font:400 16px Inter;
+            color: rgba(35, 33, 52, 1);
+            &:hover{
+                color: rgba(94, 150, 252, 1);
+                font-weight: 500;
+            }
+        }
+        .star{
+            font:400 16px Inter;
+            color: rgba(35, 33, 52, 1);
+            &:hover{
+                color: rgba(94, 150, 252, 1);
+                font-weight: 500;
+            }
+        }
+    }
+}
